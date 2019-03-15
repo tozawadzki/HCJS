@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="todoApp">
+<!-- Załączenie framework'a AngularJS-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <!-- Załączenie skryptu-->
+    <script type="text/javascript" src="scripts/scriptToDo.js"></script>
+    <link href="scripts/styleToDo.css" rel="stylesheet" type="text/css" />
+    <title>ToDo Lista</title>
+</head>
+<body>
+    <div ng-app="todoApp">
+        <!-- Nasz kontroler - wszystkie funkcje i zmienne będą szukane tutaj -->
+        <div ng-controller="TodoListController">
+            <header>Lista typu "To do". Dodawaj i osiągaj swoje cele!</header>
+            <!-- {{}} Wyświetlanie treści. Dla Angulara (coś jak @ w Razor? -->
+            <!-- remaining() - Ilość niewykonanych zadań -->
+            <!-- list.length - Ilość wszystkich zadań-->
+            <h3>Pozostało {{remaining()}} zadań z {{list.length}}</h3>
+            <!-- ng-click - tak jak onclick (dyrektywa)-->
+            <!-- archive() - Usuwa wszystkie wykonane zadania (zaznaczone elementy na liście  -->
+            <button ng-click="archive()" id="deleteButton">Usuń ukończone</button>
+            <ul>
+                <!-- Wyświetlanie elementów z listy -->
+                <li ng-repeat="item in list">
+                    <!-- Wartość checkboxa do propa "done" z tablicy list.done-->
+                    <input type="checkbox" ng-model="item.done"/>
+                    <!-- item.title - nazwa zadania-->
+                    <span>{{item.title}}</span>
+                </li>
+            </ul>
+            <!-- Wartość wpisywana będzie przypisana do newTodo -->
+            <input type="text" ng-model="newTodo" />
+            <!-- Nowy wpis do listy -->
+            <button ng-click="add()">Dodaj</button>
+        </div>
+    </div>
+    <h5>
+        <img src="images/success.png" />
+    </h5>
+    <div id="memopage">
+        <a href="memory.html">Poprzednia strona</a>
+    </div>
+    
+</body>
+</html>
