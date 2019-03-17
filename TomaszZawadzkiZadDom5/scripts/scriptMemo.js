@@ -8,7 +8,7 @@ var second;
 // Ilość dopasowań (domyślnie 0)
 var match = 0;
 // Defaultowe zdjęcie odwrotu
-var back = "images/pawel.png";
+var back = "images/qmark.png";
 //  tablicę zwracaną przez funkcję shuffle
 var sh;
 // tablicę przechowującą karty
@@ -45,8 +45,8 @@ sh = shuffle(cardsArray);
 // Jest wywoływana w pliku html, przyjmuje argumenty 0-5 (indeksy tablicy)
 function choose(card) {
     
-    document.getElementById("pawel00", "pawel01", "pawel02", "pawel10", "pawel11", "pawel12").src = back;
-    document.getElementById("pawel00", "pawel01", "pawel02", "pawel10", "pawel11", "pawel12").onclick = function () {
+    document.getElementById("qmark00", "qmark01", "qmark02", "qmark10", "qmark11", "qmark12").src = back;
+    document.getElementById("qmark00", "qmark01", "qmark02", "qmark10", "qmark11", "qmark12").onclick = function () {
         if (numClick == 0) {
             // Pierwsza karta
             first = card;
@@ -75,8 +75,8 @@ function choose(card) {
 
 // Funkcja sprawdzająca czy karty do siebie pasują
 function control() {
-    document.getElementById("pawel00", "pawel01", "pawel02", "pawel10", "pawel11", "pawel12").src = back;
-    document.getElementById("pawel00", "pawel01", "pawel02", "pawel10", "pawel11", "pawel12").onclick = function () {
+    document.getElementById("qmark00", "qmark01", "qmark02", "qmark10", "qmark11", "qmark12").src = back;
+    document.getElementById("qmark00", "qmark01", "qmark02", "qmark10", "qmark11", "qmark12").onclick = function () {
         // Wywołanie funkcji stopTimer
         stopTimer();
         // Wyzerowanie ilości kliknięć
